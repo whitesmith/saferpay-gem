@@ -1,7 +1,8 @@
-module Saferpay
+Dir[File.dirname(__FILE__) + '/saferpay/*.rb'].each do |file|
+  require file
+end
 
-  def self.hello_world
-    "hello world!"
-  end
+module Saferpay
+  extend Configuration
 
 end
