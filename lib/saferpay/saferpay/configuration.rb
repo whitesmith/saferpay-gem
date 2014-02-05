@@ -13,7 +13,7 @@ module Saferpay
     attr_accessor *VALID_CONFIG_KEYS
 
     def options
-      @options ||= DEFAULTS
+      @options = Hash[ * DEFAULTS.map { |key, val| [key, send(key)] }.flatten ].freeze
     end
 
     # Make sure we have the default values set when we get 'extended'
@@ -23,7 +23,7 @@ module Saferpay
 
     def reset
       options.each_pair do |key, val|
-        send "#{key}=", val
+        send "#{key}=", DEFAULTS[key]
       end
     end
 
