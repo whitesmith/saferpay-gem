@@ -10,6 +10,25 @@ module Saferpay
 
     base_uri Saferpay.options[:endpoint]
 
+    class << self
+
+      # Check every response for errors and raise
+      def perform_request(http_method, path, options, &block)
+        response = super(http_method, path, options, &block)
+        check_response(response)
+        response
+      end
+
+      def check_response(response)
+        raise Saferpay::Error.from_response(response) if response_errors?(response)
+      end
+
+      def response_errors?(response)
+        response.body =~ /^ERROR: .+/ || !response.response.is_a?(Net::HTTPSuccess)
+      end
+
+    end
+
     # Define the same set of accessors as the Saferpay module
     attr_accessor *Configuration::VALID_CONFIG_KEYS
  
@@ -24,6 +43,25 @@ module Saferpay
       @options.each_pair do |key, val|
         send "#{key}=", val
       end
+    end
+
+    # Returns an hash with the payment url (:payment_url key)
+    # Raises an error if missing parameters
+    def get_url(params = {})
+      params.merge!(default_params)
+      parse_get_url_response self.class.get('/CreatePayInit.asp', :query => params)
+    end
+
+    private
+
+    def parse_get_url_response(resp)
+      { :payment_url => resp.body }
+    end
+
+    def default_params
+      {
+        'ACCOUNTID' => @options[:account_id],
+      }
     end
 
   end
