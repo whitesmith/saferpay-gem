@@ -1,0 +1,408 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/CreatePayInit.asp?ACCOUNTID=99867-94913159
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '31'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDCETCDQCA=OJNLNGOCCFFOMHNBPIGOPIPB; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 18:21:02 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: Missing AMOUNT attribute'
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 18:21:06 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/CreatePayInit.asp?ACCOUNTID=99867-94913159&AMOUNT=1000&CURRENCY=EUR
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '36'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDCETCDQCA=AKNLNGOCDLKHJDAJJEJCBIHE; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 18:21:03 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: Missing DESCRIPTION attribute'
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 18:21:06 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/CreatePayInit.asp?ACCOUNTID=99867-94913159&AMOUNT=1000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '33'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDCETCDQCA=BKNLNGOCKNPDNEKAJJCLGABE; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 18:21:03 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: Missing CURRENCY attribute'
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 18:21:07 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/CreatePayInit.asp?ACCOUNTID=99867-94913159&AMOUNT=1000&CURRENCY=EUR&DESCRIPTION=Test%20description.
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '727'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDCETCDQCA=FKNLNGOCLLCCEJCMIIEGLNMH; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 18:21:04 GMT
+    body:
+      encoding: UTF-8
+      string: https://www.saferpay.com/vt2/Pay.aspx?DATA=%3cIDP+MSGTYPE%3d%22PayInit%22+MSG_GUID%3d%223032f95c3a2d4aefb0d82e05000f3d2b%22+CLIENTVERSION%3d%222.2%22+KEYID%3d%220-99867-7d5a273c0f5043e28811e764d6433086%22+TOKEN%3d%22e36e372bb77f4fa2a8691b6c722a598a%22+ALLOWCOLLECT%3d%22no%22+DELIVERY%3d%22yes%22+EXPIRATION%3d%2220140209+19%3a21%3a05%22+ACCOUNTID%3d%2299867-94913159%22+AMOUNT%3d%221000%22+CURRENCY%3d%22EUR%22+DESCRIPTION%3d%22Test+description.%22+SUCCESSLINK%3d%22http%3a%2f%2fsupport.saferpay.de%2fscripts%2fsuccess.htm%22+BACKLINK%3d%22%22+FAILLINK%3d%22%22+CCNAME%3d%22yes%22+%2f%3e&SIGNATURE=2db0c786e378c3e21035206ffa561ec679d6e093f4d1d408a75b73d1ab9680b1594c19d2cbca021ae44b34312e6188e61ec7c81607af2bfbbc078be6a474fce7
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 18:21:07 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/foobar
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 18:21:04 GMT
+      Content-Length:
+      - '1245'
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=iso-8859-1\"/>\r\n<title>404 - File or directory
+        not found.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana,
+        Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px
+        10px 15px;} \r\nh1{font-size:2.4em;margin:0;color:#FFF;}\r\nh2{font-size:1.7em;margin:0;color:#CC0000;}
+        \r\nh3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} \r\n#header{width:96%;margin:0
+        0 0 0;padding:6px 2% 6px 2%;font-family:\"trebuchet MS\", Verdana, sans-serif;color:#FFF;\r\nbackground-color:#555555;}\r\n#content{margin:0
+        0 0 2%;position:relative;}\r\n.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}\r\n-->\r\n</style>\r\n</head>\r\n<body>\r\n<div
+        id=\"header\"><h1>Server Error</h1></div>\r\n<div id=\"content\">\r\n <div
+        class=\"content-container\"><fieldset>\r\n  <h2>404 - File or directory not
+        found.</h2>\r\n  <h3>The resource you are looking for might have been removed,
+        had its name changed, or is temporarily unavailable.</h3>\r\n </fieldset></div>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 18:21:08 GMT
+- request:
+    method: move
+    uri: https://www.saferpay.com/hosting/foobar
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 405
+      message: ''
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 18:21:06 GMT
+      Content-Length:
+      - '1293'
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=iso-8859-1\"/>\r\n<title>405 - HTTP verb used
+        to access this page is not allowed.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana,
+        Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px
+        10px 15px;} \r\nh1{font-size:2.4em;margin:0;color:#FFF;}\r\nh2{font-size:1.7em;margin:0;color:#CC0000;}
+        \r\nh3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} \r\n#header{width:96%;margin:0
+        0 0 0;padding:6px 2% 6px 2%;font-family:\"trebuchet MS\", Verdana, sans-serif;color:#FFF;\r\nbackground-color:#555555;}\r\n#content{margin:0
+        0 0 2%;position:relative;}\r\n.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}\r\n-->\r\n</style>\r\n</head>\r\n<body>\r\n<div
+        id=\"header\"><h1>Server Error</h1></div>\r\n<div id=\"content\">\r\n <div
+        class=\"content-container\"><fieldset>\r\n  <h2>405 - HTTP verb used to access
+        this page is not allowed.</h2>\r\n  <h3>The page you are looking for cannot
+        be displayed because an invalid method (HTTP verb) was used to attempt access.</h3>\r\n
+        </fieldset></div>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 18:21:08 GMT
+- request:
+    method: delete
+    uri: https://www.saferpay.com/hosting/foobar
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 405
+      message: ''
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 18:21:06 GMT
+      Content-Length:
+      - '1293'
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=iso-8859-1\"/>\r\n<title>405 - HTTP verb used
+        to access this page is not allowed.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana,
+        Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px
+        10px 15px;} \r\nh1{font-size:2.4em;margin:0;color:#FFF;}\r\nh2{font-size:1.7em;margin:0;color:#CC0000;}
+        \r\nh3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} \r\n#header{width:96%;margin:0
+        0 0 0;padding:6px 2% 6px 2%;font-family:\"trebuchet MS\", Verdana, sans-serif;color:#FFF;\r\nbackground-color:#555555;}\r\n#content{margin:0
+        0 0 2%;position:relative;}\r\n.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}\r\n-->\r\n</style>\r\n</head>\r\n<body>\r\n<div
+        id=\"header\"><h1>Server Error</h1></div>\r\n<div id=\"content\">\r\n <div
+        class=\"content-container\"><fieldset>\r\n  <h2>405 - HTTP verb used to access
+        this page is not allowed.</h2>\r\n  <h3>The page you are looking for cannot
+        be displayed because an invalid method (HTTP verb) was used to attempt access.</h3>\r\n
+        </fieldset></div>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 18:21:09 GMT
+- request:
+    method: head
+    uri: https://www.saferpay.com/hosting/foobar
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Length:
+      - '1245'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 18:21:07 GMT
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 18:21:09 GMT
+- request:
+    method: copy
+    uri: https://www.saferpay.com/hosting/foobar
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 405
+      message: ''
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 18:21:07 GMT
+      Content-Length:
+      - '1293'
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=iso-8859-1\"/>\r\n<title>405 - HTTP verb used
+        to access this page is not allowed.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana,
+        Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px
+        10px 15px;} \r\nh1{font-size:2.4em;margin:0;color:#FFF;}\r\nh2{font-size:1.7em;margin:0;color:#CC0000;}
+        \r\nh3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} \r\n#header{width:96%;margin:0
+        0 0 0;padding:6px 2% 6px 2%;font-family:\"trebuchet MS\", Verdana, sans-serif;color:#FFF;\r\nbackground-color:#555555;}\r\n#content{margin:0
+        0 0 2%;position:relative;}\r\n.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}\r\n-->\r\n</style>\r\n</head>\r\n<body>\r\n<div
+        id=\"header\"><h1>Server Error</h1></div>\r\n<div id=\"content\">\r\n <div
+        class=\"content-container\"><fieldset>\r\n  <h2>405 - HTTP verb used to access
+        this page is not allowed.</h2>\r\n  <h3>The page you are looking for cannot
+        be displayed because an invalid method (HTTP verb) was used to attempt access.</h3>\r\n
+        </fieldset></div>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 18:21:10 GMT
+- request:
+    method: post
+    uri: https://www.saferpay.com/hosting/foobar
+    body:
+      encoding: UTF-8
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 18:21:08 GMT
+      Content-Length:
+      - '1245'
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=iso-8859-1\"/>\r\n<title>404 - File or directory
+        not found.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana,
+        Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px
+        10px 15px;} \r\nh1{font-size:2.4em;margin:0;color:#FFF;}\r\nh2{font-size:1.7em;margin:0;color:#CC0000;}
+        \r\nh3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} \r\n#header{width:96%;margin:0
+        0 0 0;padding:6px 2% 6px 2%;font-family:\"trebuchet MS\", Verdana, sans-serif;color:#FFF;\r\nbackground-color:#555555;}\r\n#content{margin:0
+        0 0 2%;position:relative;}\r\n.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}\r\n-->\r\n</style>\r\n</head>\r\n<body>\r\n<div
+        id=\"header\"><h1>Server Error</h1></div>\r\n<div id=\"content\">\r\n <div
+        class=\"content-container\"><fieldset>\r\n  <h2>404 - File or directory not
+        found.</h2>\r\n  <h3>The resource you are looking for might have been removed,
+        had its name changed, or is temporarily unavailable.</h3>\r\n </fieldset></div>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 18:21:10 GMT
+- request:
+    method: put
+    uri: https://www.saferpay.com/hosting/foobar
+    body:
+      encoding: UTF-8
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 405
+      message: ''
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 18:21:08 GMT
+      Content-Length:
+      - '1293'
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=iso-8859-1\"/>\r\n<title>405 - HTTP verb used
+        to access this page is not allowed.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana,
+        Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px
+        10px 15px;} \r\nh1{font-size:2.4em;margin:0;color:#FFF;}\r\nh2{font-size:1.7em;margin:0;color:#CC0000;}
+        \r\nh3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} \r\n#header{width:96%;margin:0
+        0 0 0;padding:6px 2% 6px 2%;font-family:\"trebuchet MS\", Verdana, sans-serif;color:#FFF;\r\nbackground-color:#555555;}\r\n#content{margin:0
+        0 0 2%;position:relative;}\r\n.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}\r\n-->\r\n</style>\r\n</head>\r\n<body>\r\n<div
+        id=\"header\"><h1>Server Error</h1></div>\r\n<div id=\"content\">\r\n <div
+        class=\"content-container\"><fieldset>\r\n  <h2>405 - HTTP verb used to access
+        this page is not allowed.</h2>\r\n  <h3>The page you are looking for cannot
+        be displayed because an invalid method (HTTP verb) was used to attempt access.</h3>\r\n
+        </fieldset></div>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 18:21:11 GMT
+recorded_with: VCR 2.8.0

@@ -17,7 +17,6 @@ module Saferpay
           401 => Saferpay::Error::Unauthorized,
           403 => Saferpay::Error::Forbidden,
           404 => Saferpay::Error::NotFound,
-          #405 => Saferpay::Error::MethodNotAllowed,
           406 => Saferpay::Error::NotAcceptable,
           408 => Saferpay::Error::RequestTimeout,
           422 => Saferpay::Error::UnprocessableEntity,

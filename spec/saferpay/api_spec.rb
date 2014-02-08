@@ -3,6 +3,14 @@ require 'saferpay'
 
 describe Saferpay::API do
   subject { Saferpay::API.new }
+
+  before do
+    VCR.insert_cassette 'saferpay_api', :record => :new_episodes
+  end
+ 
+  after do
+    VCR.eject_cassette
+  end
   
   describe 'configuration' do
     context 'by default' do
