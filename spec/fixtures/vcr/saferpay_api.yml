@@ -405,4 +405,478 @@ http_interactions:
         </fieldset></div>\r\n</div>\r\n</body>\r\n</html>\r\n"
     http_version: 
   recorded_at: Sat, 08 Feb 2014 18:21:11 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hostingVerfiPayConfirm.asp?ACCOUNTID=99867-94913159
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 19:31:10 GMT
+      Content-Length:
+      - '1245'
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=iso-8859-1\"/>\r\n<title>404 - File or directory
+        not found.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana,
+        Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px
+        10px 15px;} \r\nh1{font-size:2.4em;margin:0;color:#FFF;}\r\nh2{font-size:1.7em;margin:0;color:#CC0000;}
+        \r\nh3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} \r\n#header{width:96%;margin:0
+        0 0 0;padding:6px 2% 6px 2%;font-family:\"trebuchet MS\", Verdana, sans-serif;color:#FFF;\r\nbackground-color:#555555;}\r\n#content{margin:0
+        0 0 2%;position:relative;}\r\n.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}\r\n-->\r\n</style>\r\n</head>\r\n<body>\r\n<div
+        id=\"header\"><h1>Server Error</h1></div>\r\n<div id=\"content\">\r\n <div
+        class=\"content-container\"><fieldset>\r\n  <h2>404 - File or directory not
+        found.</h2>\r\n  <h3>The resource you are looking for might have been removed,
+        had its name changed, or is temporarily unavailable.</h3>\r\n </fieldset></div>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 19:31:10 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hostingVerfiPayConfirm.asp?ACCOUNTID=99867-94913159&DATA=test-data&SIGNATURE=test-signature
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 19:31:10 GMT
+      Content-Length:
+      - '1245'
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=iso-8859-1\"/>\r\n<title>404 - File or directory
+        not found.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana,
+        Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px
+        10px 15px;} \r\nh1{font-size:2.4em;margin:0;color:#FFF;}\r\nh2{font-size:1.7em;margin:0;color:#CC0000;}
+        \r\nh3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} \r\n#header{width:96%;margin:0
+        0 0 0;padding:6px 2% 6px 2%;font-family:\"trebuchet MS\", Verdana, sans-serif;color:#FFF;\r\nbackground-color:#555555;}\r\n#content{margin:0
+        0 0 2%;position:relative;}\r\n.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}\r\n-->\r\n</style>\r\n</head>\r\n<body>\r\n<div
+        id=\"header\"><h1>Server Error</h1></div>\r\n<div id=\"content\">\r\n <div
+        class=\"content-container\"><fieldset>\r\n  <h2>404 - File or directory not
+        found.</h2>\r\n  <h3>The resource you are looking for might have been removed,
+        had its name changed, or is temporarily unavailable.</h3>\r\n </fieldset></div>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 19:31:11 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hostingVerfiPayConfirm.asp?ACCOUNTID=99867-94913159&DATA=%3CIDP%2BMSGTYPE=%5C%22PayConfirm%5C%22%2BTOKEN=%5C%22(unused)%5C%22%2BVTVERIFY=%5C%22(obsolete)%5C%22%2BKEYID=%5C%221-0%5C%22%2BID=%5C%22A668MSAprOj4tAzv7G9lAQUfUr3A%5C%22%2BACCOUNTID=%5C%2299867-94913159%5C%22%2BPROVIDERID=%5C%2290%5C%22%2BPROVIDERNAME=%5C%22Saferpay%2BTest%2BCard%5C%22%2BORDERID=%5C%22123456789-001%5C%22%2BAMOUNT=%5C%221000%5C%22%2BCURRENCY=%5C%22EUR%5C%22%2BIP=%5C%22193.247.180.193%5C%22%2BIPCOUNTRY=%5C%22CH%5C%22%2BCCCOUNTRY=%5C%22XX%5C%22%2BMPI_LIABILITYSHIFT=%5C%22yes%5C%22%2BMPI_TX_CAVV=%5C%22AAABBIIFmAAAAAAAAAAAAAAAAAA=%5C%22%2BMPI_XID=%5C%22CxMTYwhoUXtCBAEndBULcRIQaAY=%5C%22%2BECI=%5C%221%5C%22%2BCAVV=%5C%22AAABBIIFmAAAAAAAAAAAAAAAAAA=%5C%22%2BXID=%5C%22CxMTYwhoUXtCBAEndBULcRIQaAY=%5C%22%2B/%3E&SIGNATURE=7b2bb163f4ef86d969d992b4e2d61ad48d3b9022e0ec68177e35fe53184e6b3399730d1a3641d2a984ce38699daad72ab006d5d6a9565c5ae1cff8bdc8a1eb63
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 19:31:11 GMT
+      Content-Length:
+      - '1245'
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=iso-8859-1\"/>\r\n<title>404 - File or directory
+        not found.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana,
+        Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px
+        10px 15px;} \r\nh1{font-size:2.4em;margin:0;color:#FFF;}\r\nh2{font-size:1.7em;margin:0;color:#CC0000;}
+        \r\nh3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} \r\n#header{width:96%;margin:0
+        0 0 0;padding:6px 2% 6px 2%;font-family:\"trebuchet MS\", Verdana, sans-serif;color:#FFF;\r\nbackground-color:#555555;}\r\n#content{margin:0
+        0 0 2%;position:relative;}\r\n.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}\r\n-->\r\n</style>\r\n</head>\r\n<body>\r\n<div
+        id=\"header\"><h1>Server Error</h1></div>\r\n<div id=\"content\">\r\n <div
+        class=\"content-container\"><fieldset>\r\n  <h2>404 - File or directory not
+        found.</h2>\r\n  <h3>The resource you are looking for might have been removed,
+        had its name changed, or is temporarily unavailable.</h3>\r\n </fieldset></div>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 19:31:11 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hostingVerfiPayConfirm.asp?ACCOUNTID=99867-94913159&DATA=%3CIDP%2BMSGTYPE=%5C%22PayConfirm%5C%22%2BTOKEN=%5C%22(unused)%5C%22%2BVTVERIFY=%5C%22(obsolete)%5C%22%2BKEYID=%5C%221-0%5C%22%2BID=%5C%22A668MSAprOj4tAzv7G9lAQUfUr3A%5C%22%2BACCOUNTID=%5C%2299867-94913159%5C%22%2BPROVIDERID=%5C%2290%5C%22%2BPROVIDERNAME=%5C%22Saferpay%2BTest%2BCard%5C%22%2BORDERID=%5C%22123456789-001%5C%22%2BAMOUNT=%5C%221000%5C%22%2BCURRENCY=%5C%22EUR%5C%22%2BIP=%5C%22193.247.180.193%5C%22%2BIPCOUNTRY=%5C%22CH%5C%22%2BCCCOUNTRY=%5C%22XX%5C%22%2BMPI_LIABILITYSHIFT=%5C%22yes%5C%22%2BMPI_TX_CAVV=%5C%22AAABBIIFmAAAAAAAAAAAAAAAAAA=%5C%22%2BMPI_XID=%5C%22CxMTYwhoUXtCBAEndBULcRIQaAY=%5C%22%2BECI=%5C%221%5C%22%2BCAVV=%5C%22AAABBIIFmAAAAAAAAAAAAAAAAAA=%5C%22%2BXID=%5C%22CxMTYwhoUXtCBAEndBULcRIQaAY=%5C%22%2B/%3E&SIGNATURE=test-signature
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 19:31:11 GMT
+      Content-Length:
+      - '1245'
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=iso-8859-1\"/>\r\n<title>404 - File or directory
+        not found.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana,
+        Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px
+        10px 15px;} \r\nh1{font-size:2.4em;margin:0;color:#FFF;}\r\nh2{font-size:1.7em;margin:0;color:#CC0000;}
+        \r\nh3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} \r\n#header{width:96%;margin:0
+        0 0 0;padding:6px 2% 6px 2%;font-family:\"trebuchet MS\", Verdana, sans-serif;color:#FFF;\r\nbackground-color:#555555;}\r\n#content{margin:0
+        0 0 2%;position:relative;}\r\n.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}\r\n-->\r\n</style>\r\n</head>\r\n<body>\r\n<div
+        id=\"header\"><h1>Server Error</h1></div>\r\n<div id=\"content\">\r\n <div
+        class=\"content-container\"><fieldset>\r\n  <h2>404 - File or directory not
+        found.</h2>\r\n  <h3>The resource you are looking for might have been removed,
+        had its name changed, or is temporarily unavailable.</h3>\r\n </fieldset></div>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 19:31:12 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hostingVerfiPayConfirm.asp?ACCOUNTID=99867-94913159&DATA=test-data
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 19:31:13 GMT
+      Content-Length:
+      - '1245'
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n<html
+        xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\"
+        content=\"text/html; charset=iso-8859-1\"/>\r\n<title>404 - File or directory
+        not found.</title>\r\n<style type=\"text/css\">\r\n<!--\r\nbody{margin:0;font-size:.7em;font-family:Verdana,
+        Arial, Helvetica, sans-serif;background:#EEEEEE;}\r\nfieldset{padding:0 15px
+        10px 15px;} \r\nh1{font-size:2.4em;margin:0;color:#FFF;}\r\nh2{font-size:1.7em;margin:0;color:#CC0000;}
+        \r\nh3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} \r\n#header{width:96%;margin:0
+        0 0 0;padding:6px 2% 6px 2%;font-family:\"trebuchet MS\", Verdana, sans-serif;color:#FFF;\r\nbackground-color:#555555;}\r\n#content{margin:0
+        0 0 2%;position:relative;}\r\n.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}\r\n-->\r\n</style>\r\n</head>\r\n<body>\r\n<div
+        id=\"header\"><h1>Server Error</h1></div>\r\n<div id=\"content\">\r\n <div
+        class=\"content-container\"><fieldset>\r\n  <h2>404 - File or directory not
+        found.</h2>\r\n  <h3>The resource you are looking for might have been removed,
+        had its name changed, or is temporarily unavailable.</h3>\r\n </fieldset></div>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 19:31:13 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/VerifyPayConfirm.asp?ACCOUNTID=99867-94913159
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '29'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDAUSTTRCD=KMHNKLOCPNFGDMDBBAGCJIJO; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 20:03:34 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: Missing DATA attribute'
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 20:03:35 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/VerifyPayConfirm.asp?ACCOUNTID=99867-94913159&DATA=test-data&SIGNATURE=test-signature
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '31'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDAUSTTRCD=LMHNKLOCLEJACIPNGBHAGGCL; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 20:03:35 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: Could not load DATA XML.'
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 20:03:35 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/VerifyPayConfirm.asp?ACCOUNTID=99867-94913159&DATA=%3CIDP%2BMSGTYPE=%5C%22PayConfirm%5C%22%2BTOKEN=%5C%22(unused)%5C%22%2BVTVERIFY=%5C%22(obsolete)%5C%22%2BKEYID=%5C%221-0%5C%22%2BID=%5C%22A668MSAprOj4tAzv7G9lAQUfUr3A%5C%22%2BACCOUNTID=%5C%2299867-94913159%5C%22%2BPROVIDERID=%5C%2290%5C%22%2BPROVIDERNAME=%5C%22Saferpay%2BTest%2BCard%5C%22%2BORDERID=%5C%22123456789-001%5C%22%2BAMOUNT=%5C%221000%5C%22%2BCURRENCY=%5C%22EUR%5C%22%2BIP=%5C%22193.247.180.193%5C%22%2BIPCOUNTRY=%5C%22CH%5C%22%2BCCCOUNTRY=%5C%22XX%5C%22%2BMPI_LIABILITYSHIFT=%5C%22yes%5C%22%2BMPI_TX_CAVV=%5C%22AAABBIIFmAAAAAAAAAAAAAAAAAA=%5C%22%2BMPI_XID=%5C%22CxMTYwhoUXtCBAEndBULcRIQaAY=%5C%22%2BECI=%5C%221%5C%22%2BCAVV=%5C%22AAABBIIFmAAAAAAAAAAAAAAAAAA=%5C%22%2BXID=%5C%22CxMTYwhoUXtCBAEndBULcRIQaAY=%5C%22%2B/%3E&SIGNATURE=7b2bb163f4ef86d969d992b4e2d61ad48d3b9022e0ec68177e35fe53184e6b3399730d1a3641d2a984ce38699daad72ab006d5d6a9565c5ae1cff8bdc8a1eb63
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '25'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDAUSTTRCD=MMHNKLOCKJAANKPDFJDDLBAB; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 20:03:35 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: An Error occurred.'
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 20:03:36 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/VerifyPayConfirm.asp?ACCOUNTID=99867-94913159&DATA=%3CIDP%2BMSGTYPE=%5C%22PayConfirm%5C%22%2BTOKEN=%5C%22(unused)%5C%22%2BVTVERIFY=%5C%22(obsolete)%5C%22%2BKEYID=%5C%221-0%5C%22%2BID=%5C%22A668MSAprOj4tAzv7G9lAQUfUr3A%5C%22%2BACCOUNTID=%5C%2299867-94913159%5C%22%2BPROVIDERID=%5C%2290%5C%22%2BPROVIDERNAME=%5C%22Saferpay%2BTest%2BCard%5C%22%2BORDERID=%5C%22123456789-001%5C%22%2BAMOUNT=%5C%221000%5C%22%2BCURRENCY=%5C%22EUR%5C%22%2BIP=%5C%22193.247.180.193%5C%22%2BIPCOUNTRY=%5C%22CH%5C%22%2BCCCOUNTRY=%5C%22XX%5C%22%2BMPI_LIABILITYSHIFT=%5C%22yes%5C%22%2BMPI_TX_CAVV=%5C%22AAABBIIFmAAAAAAAAAAAAAAAAAA=%5C%22%2BMPI_XID=%5C%22CxMTYwhoUXtCBAEndBULcRIQaAY=%5C%22%2BECI=%5C%221%5C%22%2BCAVV=%5C%22AAABBIIFmAAAAAAAAAAAAAAAAAA=%5C%22%2BXID=%5C%22CxMTYwhoUXtCBAEndBULcRIQaAY=%5C%22%2B/%3E&SIGNATURE=test-signature
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '25'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDAUSTTRCD=ANHNKLOCLAEAHAKJICNBJIHB; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 20:03:37 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: An Error occurred.'
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 20:03:37 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/VerifyPayConfirm.asp?ACCOUNTID=99867-94913159&DATA=test-data
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '34'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDAUSTTRCD=DNHNKLOCKMAOPMHMJIHLJHOC; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sat, 08 Feb 2014 20:03:37 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: Missing SIGNATURE attribute'
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 20:03:38 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/VerifyPayConfirm.asp?ACCOUNTID=99867-94913159&DATA=%253CIDP%2BMSGTYPE=%255C%2522PayConfirm%255C%2522%2BTOKEN=%255C%2522(unused)%255C%2522%2BVTVERIFY=%255C%2522(obsolete)%255C%2522%2BKEYID=%255C%25221-0%255C%2522%2BID=%255C%2522A668MSAprOj4tAzv7G9lAQUfUr3A%255C%2522%2BACCOUNTID=%255C%252299867-94913159%255C%2522%2BPROVIDERID=%255C%252290%255C%2522%2BPROVIDERNAME=%255C%2522Saferpay%2BTest%2BCard%255C%2522%2BORDERID=%255C%2522123456789-001%255C%2522%2BAMOUNT=%255C%25221000%255C%2522%2BCURRENCY=%255C%2522EUR%255C%2522%2BIP=%255C%2522193.247.180.193%255C%2522%2BIPCOUNTRY=%255C%2522CH%255C%2522%2BCCCOUNTRY=%255C%2522XX%255C%2522%2BMPI_LIABILITYSHIFT=%255C%2522yes%255C%2522%2BMPI_TX_CAVV=%255C%2522AAABBIIFmAAAAAAAAAAAAAAAAAA=%255C%2522%2BMPI_XID=%255C%2522CxMTYwhoUXtCBAEndBULcRIQaAY=%255C%2522%2BECI=%255C%25221%255C%2522%2BCAVV=%255C%2522AAABBIIFmAAAAAAAAAAAAAAAAAA=%255C%2522%2BXID=%255C%2522CxMTYwhoUXtCBAEndBULcRIQaAY=%255C%2522%2B/%253E&SIGNATURE=7b2bb163f4ef86d969d992b4e2d61ad48d3b9022e0ec68177e35fe53184e6b3399730d1a3641d2a984ce38699daad72ab006d5d6a9565c5ae1cff8bdc8a1eb63
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '49'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDCUSQTRDD=KCLPIHLDNPOKKHCGNEBGNEPB; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 15:02:03 GMT
+    body:
+      encoding: UTF-8
+      string: OK:ID=A668MSAprOj4tAzv7G9lAQUfUr3A&TOKEN=(unused)
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 15:02:06 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/VerifyPayConfirm.asp?ACCOUNTID=99867-94913159&DATA=%253CIDP%2BMSGTYPE=%255C%2522PayConfirm%255C%2522%2BTOKEN=%255C%2522(unused)%255C%2522%2BVTVERIFY=%255C%2522(obsolete)%255C%2522%2BKEYID=%255C%25221-0%255C%2522%2BID=%255C%2522A668MSAprOj4tAzv7G9lAQUfUr3A%255C%2522%2BACCOUNTID=%255C%252299867-94913159%255C%2522%2BPROVIDERID=%255C%252290%255C%2522%2BPROVIDERNAME=%255C%2522Saferpay%2BTest%2BCard%255C%2522%2BORDERID=%255C%2522123456789-001%255C%2522%2BAMOUNT=%255C%25221000%255C%2522%2BCURRENCY=%255C%2522EUR%255C%2522%2BIP=%255C%2522193.247.180.193%255C%2522%2BIPCOUNTRY=%255C%2522CH%255C%2522%2BCCCOUNTRY=%255C%2522XX%255C%2522%2BMPI_LIABILITYSHIFT=%255C%2522yes%255C%2522%2BMPI_TX_CAVV=%255C%2522AAABBIIFmAAAAAAAAAAAAAAAAAA=%255C%2522%2BMPI_XID=%255C%2522CxMTYwhoUXtCBAEndBULcRIQaAY=%255C%2522%2BECI=%255C%25221%255C%2522%2BCAVV=%255C%2522AAABBIIFmAAAAAAAAAAAAAAAAAA=%255C%2522%2BXID=%255C%2522CxMTYwhoUXtCBAEndBULcRIQaAY=%255C%2522%2B/%253E&SIGNATURE=test-signature
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '25'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDCUSQTRDD=NHLPIHLDDDMFAMDENJAJKECG; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 15:02:53 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: An Error occurred.'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 15:02:56 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/VerifyPayConfirm.asp?ACCOUNTID=99867-94913159&DATA=%253CIDP%2520MSGTYPE=%2522PayConfirm%2522%2520TOKEN=%2522(unused)%2522%2520VTVERIFY=%2522(obsolete)%2522%2520KEYID=%25221-0%2522%2520ID=%2522A668MSAprOj4tAzv7G9lAQUfUr3A%2522%2520ACCOUNTID=%252299867-94913159%2522%2520PROVIDERID=%252290%2522%2520PROVIDERNAME=%2522Saferpay%2520Test%2520Card%2522%2520ORDERID=%2522123456789-001%2522%2520AMOUNT=%25221000%2522%2520CURRENCY=%2522EUR%2522%2520IP=%2522193.247.180.193%2522%2520IPCOUNTRY=%2522CH%2522%2520CCCOUNTRY=%2522XX%2522%2520MPI_LIABILITYSHIFT=%2522yes%2522%2520MPI_TX_CAVV=%2522AAABBIIFmAAAAAAAAAAAAAAAAAA=%2522%2520MPI_XID=%2522CxMTYwhoUXtCBAEndBULcRIQaAY=%2522%2520ECI=%25221%2522%2520CAVV=%2522AAABBIIFmAAAAAAAAAAAAAAAAAA=%2522%2520XID=%2522CxMTYwhoUXtCBAEndBULcRIQaAY=%2522%2520/%253E&SIGNATURE=7b2bb163f4ef86d969d992b4e2d61ad48d3b9022e0ec68177e35fe53184e6b3399730d1a3641d2a984ce38699daad72ab006d5d6a9565c5ae1cff8bdc8a1eb63
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '49'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDCUSQTRDD=ADACJHLDJNCICLNOMLBAKNPG; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 16:41:23 GMT
+    body:
+      encoding: UTF-8
+      string: OK:ID=A668MSAprOj4tAzv7G9lAQUfUr3A&TOKEN=(unused)
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 16:41:27 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/VerifyPayConfirm.asp?ACCOUNTID=99867-94913159&DATA=%253CIDP%2520MSGTYPE=%2522PayConfirm%2522%2520TOKEN=%2522(unused)%2522%2520VTVERIFY=%2522(obsolete)%2522%2520KEYID=%25221-0%2522%2520ID=%2522A668MSAprOj4tAzv7G9lAQUfUr3A%2522%2520ACCOUNTID=%252299867-94913159%2522%2520PROVIDERID=%252290%2522%2520PROVIDERNAME=%2522Saferpay%2520Test%2520Card%2522%2520ORDERID=%2522123456789-001%2522%2520AMOUNT=%25221000%2522%2520CURRENCY=%2522EUR%2522%2520IP=%2522193.247.180.193%2522%2520IPCOUNTRY=%2522CH%2522%2520CCCOUNTRY=%2522XX%2522%2520MPI_LIABILITYSHIFT=%2522yes%2522%2520MPI_TX_CAVV=%2522AAABBIIFmAAAAAAAAAAAAAAAAAA=%2522%2520MPI_XID=%2522CxMTYwhoUXtCBAEndBULcRIQaAY=%2522%2520ECI=%25221%2522%2520CAVV=%2522AAABBIIFmAAAAAAAAAAAAAAAAAA=%2522%2520XID=%2522CxMTYwhoUXtCBAEndBULcRIQaAY=%2522%2520/%253E&SIGNATURE=test-signature
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '25'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDCUSQTRDD=EDACJHLDABHJNOFJJIFPIDEP; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 16:41:26 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: An Error occurred.'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 16:41:30 GMT
 recorded_with: VCR 2.8.0

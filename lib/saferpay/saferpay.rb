@@ -52,16 +52,48 @@ module Saferpay
       parse_get_url_response self.class.get('/CreatePayInit.asp', :query => params)
     end
 
+    # Returns hash with parsed (and verified) response data
+    # Raises an error if verification failed
+    def handle_pay_confirm(request_params = {})
+
+      # Verify data validity
+      verify_resp = parse_verify_pay_confirm_response self.class.get('/VerifyPayConfirm.asp', :query => request_params.merge(default_params))
+
+      # Parse verified callback data
+      callback_data = parse_callback_data(request_params)
+
+      verify_resp.merge(:callback_data => callback_data)
+    end
+
     private
 
     def parse_get_url_response(resp)
       { :payment_url => resp.body }
     end
 
+    def parse_verify_pay_confirm_response(resp)
+      query = resp.body.split('OK:').last
+      query_to_hash(query)
+    end
+
+    def parse_callback_data(params)
+      normalize_params!(params)
+      params[:data] = normalize_params!(HTTParty::Parser.call(params[:data], :xml)['IDP'])
+      params
+    end
+
     def default_params
       {
         'ACCOUNTID' => @options[:account_id],
       }
+    end
+
+    def query_to_hash(query)
+      Hash[ query.split('&').map { |q| q.split('=').each_with_index.map { |p, i| (i == 0) ? p.downcase.to_sym : URI.decode(p) } } ]
+    end
+
+    def normalize_params!(params)
+      params.replace Hash[ params.each_pair.map { |k, v| [k.downcase.to_sym, URI.decode(v).gsub('+', ' ')] } ]
     end
 
   end
