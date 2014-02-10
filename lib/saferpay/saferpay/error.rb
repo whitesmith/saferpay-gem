@@ -31,7 +31,7 @@ module Saferpay
 
       def parse_error(response)
         if response.body =~ /^ERROR: (.+)/
-          [$1.gsub(/[.?;]?$/, ''), 400]
+          [$1.gsub(/[.?;]?$/, '').gsub('PayComplete: ', '').sub(/^[a-z]/) {|c| c.upcase}, 400]
         else
           msg = response.response.message
           msg = response.response.class.name.split('::').last.gsub('HTTP','').gsub(/[A-Z]/, ' \0').strip if msg.empty? # Net::HTTPNotFound -> Not Found

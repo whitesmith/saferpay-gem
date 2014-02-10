@@ -190,8 +190,58 @@ describe Saferpay::API do
             end
 
             it 'contains the expected Amount' do
-              expect(callback_data[:data][:amount]).to be '1000'
+              expect(callback_data[:data][:amount]).to eq '1000'
             end
+          end
+        end
+      end
+    end
+
+  end
+
+  describe 'GET complete payment' do
+    let (:default_options) { {'spPassword' => 'XAjc3Kna', 'ACTION' => 'Settlement'} }   # only for test account on PayComplete method (via HTTPs interface)
+
+    context 'when id is missing' do
+      let (:options) { default_options.merge({}) }
+      it 'raises Missing ID error' do
+        expect { subject.complete_payment(options) }.to raise_error(Saferpay::Error::BadRequest, 'Missing ID attribute')
+      end
+    end
+
+    context 'when id is defined' do
+
+      context 'when id is not valid' do
+        let (:options) { default_options.merge({'ID' => 'test-id'}) }
+        it 'raises invalid ID error' do
+          expect { subject.complete_payment(options) }.to raise_error(Saferpay::Error::BadRequest, 'Transaction not available')
+        end
+      end
+
+      context 'when id is valid' do
+        let (:options) { default_options.merge({'ID' => 'WxWrIlA48W06rAjKKOp5bzS80E5A'}) }
+        
+        it 'does not raise an error' do
+          expect { subject.complete_payment(options) }.not_to raise_error
+        end
+
+        describe 'the response' do
+          let(:response) { subject.complete_payment(options) }
+
+          it 'is an hash' do
+            expect(response).to be_an Hash
+          end
+
+          it 'contains the id' do
+            expect(response[:id]).to eq options['ID']
+          end
+
+          it 'specifies if the request was successfully processed' do
+            expect(response[:successful]).to be_true
+          end
+
+          it 'contains the expected Message Type' do
+            expect(response[:msgtype]).to eq 'PayConfirm'
           end
         end
       end

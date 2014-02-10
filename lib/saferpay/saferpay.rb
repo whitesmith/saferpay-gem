@@ -65,6 +65,13 @@ module Saferpay
       verify_resp.merge(:callback_data => callback_data)
     end
 
+    # Returns an hash with ok
+    # Raises an error if missing parameters
+    def complete_payment(params = {})
+      params.merge!(default_params)
+      parse_complete_payment_response self.class.get('/PayCompleteV2.asp', :query => params)
+    end
+
     private
 
     def parse_get_url_response(resp)
@@ -80,6 +87,13 @@ module Saferpay
       normalize_params!(params)
       params[:data] = normalize_params!(HTTParty::Parser.call(params[:data], :xml)['IDP'])
       params
+    end
+
+    def parse_complete_payment_response(resp)
+      data = resp.body.split('OK:').last
+      data = normalize_params!(HTTParty::Parser.call(data, :xml)['IDP'])
+      data[:successful] = (data[:result] == '0')
+      data
     end
 
     def default_params

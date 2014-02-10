@@ -879,4 +879,408 @@ http_interactions:
       string: 'ERROR: An Error occurred.'
     http_version: 
   recorded_at: Sun, 09 Feb 2014 16:41:30 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/PayComplete.asp?ACCOUNTID=99867-94913159
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '40'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQWQTRSBB=KNCMDPDDFLOHHKJKFHDECGOG; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 17:31:01 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: CheckPassword: Access not allowed'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 17:31:07 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/PayComplete.asp?ACCOUNTID=99867-94913159&ID=test-id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '40'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQWQTRSBB=PNCMDPDDJLNNMOJAHFCAFCKE; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 17:31:07 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: CheckPassword: Access not allowed'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 17:31:11 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/PayComplete.asp?ACCOUNTID=99867-94913159&ID=A668MSAprOj4tAzv7G9lAQUfUr3A
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '40'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQWQTRSBB=GOCMDPDDMPAEFLHKFLPEBCGF; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 17:31:10 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: CheckPassword: Access not allowed'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 17:31:13 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/PayComplete.asp?ACCOUNTID=99867-94913159&spPassword=XAjc3Kna
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '40'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQWQTRSBB=EJEMDPDDENPCHMBINFFGHPEJ; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 17:39:50 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: PayComplete: Missing ID attribute'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 17:39:54 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/PayComplete.asp?ACCOUNTID=99867-94913159&ID=test-id&spPassword=XAjc3Kna
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '32'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQWQTRSBB=JJEMDPDDHDMDPNCOHMPCCHCE; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 17:39:52 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: transaction not available'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 17:39:56 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/PayComplete.asp?ACCOUNTID=99867-94913159&ID=A668MSAprOj4tAzv7G9lAQUfUr3A&spPassword=XAjc3Kna
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '32'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQWQTRSBB=HKEMDPDDGBJMLDMHGBFICCKP; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 17:39:58 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: transaction not available'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 17:40:02 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/PayCompleteV2.asp?ACCOUNTID=99867-94913159&ID=A668MSAprOj4tAzv7G9lAQUfUr3A&spPassword=XAjc3Kna
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '32'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQWQTRSBB=BKFMDPDDCLCAIIJNAGKEJNKO; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 17:45:00 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: transaction not available'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 17:45:04 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/PayCompleteV2.asp?ACCOUNTID=99867-94913159&ID=test-id&spPassword=XAjc3Kna
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '32'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQWQTRSBB=CKFMDPDDFGHBNGMMLLOCLOJO; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 17:45:04 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: transaction not available'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 17:45:08 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/PayCompleteV2.asp?ACCOUNTID=99867-94913159&spPassword=XAjc3Kna
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '40'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQWQTRSBB=MKFMDPDDFHDGAKBMCAGDJPMP; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 17:45:07 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: PayComplete: Missing ID attribute'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 17:45:11 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/PayCompleteV2.asp?ACCOUNTID=99867-94913159&ACTION=Settlement&spPassword=XAjc3Kna
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '40'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQWQTRSBB=AMIMDPDDHDKPNJNIGLNACIIA; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 18:02:43 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: PayComplete: Missing ID attribute'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 18:02:47 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/PayCompleteV2.asp?ACCOUNTID=99867-94913159&ACTION=Settlement&ID=test-id&spPassword=XAjc3Kna
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '32'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQWQTRSBB=DMIMDPDDIDMCACHIGBGKMJAM; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 18:02:46 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: transaction not available'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 18:02:49 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/PayCompleteV2.asp?ACCOUNTID=99867-94913159&ACTION=Settlement&ID=A668MSAprOj4tAzv7G9lAQUfUr3A&spPassword=XAjc3Kna
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '32'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQWQTRSBB=GMIMDPDDKCMOKDCMFEPLACKO; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 18:02:50 GMT
+    body:
+      encoding: UTF-8
+      string: 'ERROR: transaction not available'
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 18:02:54 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/PayCompleteV2.asp?ACCOUNTID=99867-94913159&ACTION=Settlement&ID=WxWrIlA48W06rAjKKOp5bzS80E5A&spPassword=XAjc3Kna
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '122'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQWQTRSBB=FMJMDPDDKKANCDOMAFMMDCDB; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 09 Feb 2014 18:07:34 GMT
+    body:
+      encoding: UTF-8
+      string: "OK:<IDP RESULT=\"0\" MESSAGE=\"request was processed successfully\"
+        ID=\"WxWrIlA48W06rAjKKOp5bzS80E5A\" MSGTYPE=\"PayConfirm\"/>\r\n"
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 18:07:37 GMT
 recorded_with: VCR 2.8.0
