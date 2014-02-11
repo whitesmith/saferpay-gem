@@ -48,7 +48,7 @@ module Saferpay
     # Returns an hash with the payment url (:payment_url key)
     # Raises an error if missing parameters
     def get_url(params = {})
-      params.merge!(default_params)
+      params.merge!(get_url_default_params)
       parse_get_url_response self.class.get('/CreatePayInit.asp', :query => params)
     end
 
@@ -84,14 +84,14 @@ module Saferpay
     end
 
     def parse_callback_data(params)
-      normalize_params!(params)
-      params[:data] = normalize_params!(HTTParty::Parser.call(params[:data], :xml)['IDP'])
+      params = normalize_params(params)
+      params[:data] = normalize_params(HTTParty::Parser.call(params[:data], :xml)['IDP'])
       params
     end
 
     def parse_complete_payment_response(resp)
       data = resp.body.split('OK:').last
-      data = normalize_params!(HTTParty::Parser.call(data, :xml)['IDP'])
+      data = normalize_params(HTTParty::Parser.call(data, :xml)['IDP'])
       data[:successful] = (data[:result] == '0')
       data
     end
@@ -99,15 +99,23 @@ module Saferpay
     def default_params
       {
         'ACCOUNTID' => @options[:account_id],
-      }
+      }.reject{ |k, v| v.nil? }
+    end
+
+    def get_url_default_params
+      default_params.merge({
+        'SUCCESSLINK' => @options[:success_link],
+        'FAILLINK' => @options[:fail_link],
+        'BACKLINK' => @options[:back_link],
+      }).reject{ |k, v| v.nil? }
     end
 
     def query_to_hash(query)
       Hash[ query.split('&').map { |q| q.split('=').each_with_index.map { |p, i| (i == 0) ? p.downcase.to_sym : URI.decode(p) } } ]
     end
 
-    def normalize_params!(params)
-      params.replace Hash[ params.each_pair.map { |k, v| [k.downcase.to_sym, URI.decode(v).gsub('+', ' ')] } ]
+    def normalize_params(params)
+      Hash[ params.to_hash.each_pair.map { |k, v| [(k.downcase.to_sym rescue k), (URI.decode(v).gsub('+', ' ') rescue v)] } ]
     end
 
   end

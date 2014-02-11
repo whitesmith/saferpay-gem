@@ -78,17 +78,7 @@ describe Saferpay::API do
         expect { subject.get_url(options) }.not_to raise_error
       end
 
-      describe 'the response' do
-        let(:response) { subject.get_url(options) }
-
-        it 'is an hash' do
-          expect(response).to be_an Hash
-        end
-
-        it 'contains the payment url' do
-          expect(response[:payment_url]).to match /^https:\/\/www.saferpay.com\/.+/
-        end
-      end
+      it_behaves_like 'the get payment url response'
     end
 
   end
@@ -151,49 +141,17 @@ describe Saferpay::API do
           expect { subject.handle_pay_confirm(options) }.not_to raise_error
         end
 
-        describe 'the response' do
-          let(:response) { subject.handle_pay_confirm(options) }
+        it_behaves_like 'the verify pay confirm response'
+      end
 
-          it 'is an hash' do
-            expect(response).to be_an Hash
-          end
-
-          it 'contains the id' do
-            expect(response[:id]).to match /\w{28}/
-          end
-
-          it 'contains callback data' do
-            expect(response[:callback_data]).not_to be_nil
-          end
-
-          describe 'the callback data' do
-            let(:callback_data) { response[:callback_data] }
-
-            it 'is an hash' do
-              expect(callback_data).to be_an Hash
-            end
-
-            it 'contains normalized keys' do
-              expect(callback_data.keys).to eq([:data, :signature])
-            end
-
-            it 'contains the XML data' do
-              expect(callback_data[:data]).to be_an Hash
-            end
-
-            it 'contains the expected Message Type' do
-              expect(callback_data[:data][:msgtype]).to eq 'PayConfirm'
-            end
-
-            it 'contains the expected Account ID' do
-              expect(callback_data[:data][:accountid]).to eq subject.account_id
-            end
-
-            it 'contains the expected Amount' do
-              expect(callback_data[:data][:amount]).to eq '1000'
-            end
-          end
+      context 'when more than data and signature are defined' do
+        let (:options) { {:id => 1, :controller => 'test', 'DATA' => URI.encode('<IDP MSGTYPE="PayConfirm" TOKEN="(unused)" VTVERIFY="(obsolete)" KEYID="1-0" ID="A668MSAprOj4tAzv7G9lAQUfUr3A" ACCOUNTID="99867-94913159" PROVIDERID="90" PROVIDERNAME="Saferpay Test Card" ORDERID="123456789-001" AMOUNT="1000" CURRENCY="EUR" IP="193.247.180.193" IPCOUNTRY="CH" CCCOUNTRY="XX" MPI_LIABILITYSHIFT="yes" MPI_TX_CAVV="AAABBIIFmAAAAAAAAAAAAAAAAAA=" MPI_XID="CxMTYwhoUXtCBAEndBULcRIQaAY=" ECI="1" CAVV="AAABBIIFmAAAAAAAAAAAAAAAAAA=" XID="CxMTYwhoUXtCBAEndBULcRIQaAY=" />'), 'SIGNATURE' => '7b2bb163f4ef86d969d992b4e2d61ad48d3b9022e0ec68177e35fe53184e6b3399730d1a3641d2a984ce38699daad72ab006d5d6a9565c5ae1cff8bdc8a1eb63'} }
+        
+        it 'does not raise an error' do
+          expect { subject.handle_pay_confirm(options) }.not_to raise_error
         end
+
+        it_behaves_like 'the verify pay confirm response'
       end
     end
 
@@ -225,25 +183,7 @@ describe Saferpay::API do
           expect { subject.complete_payment(options) }.not_to raise_error
         end
 
-        describe 'the response' do
-          let(:response) { subject.complete_payment(options) }
-
-          it 'is an hash' do
-            expect(response).to be_an Hash
-          end
-
-          it 'contains the id' do
-            expect(response[:id]).to eq options['ID']
-          end
-
-          it 'specifies if the request was successfully processed' do
-            expect(response[:successful]).to be_true
-          end
-
-          it 'contains the expected Message Type' do
-            expect(response[:msgtype]).to eq 'PayConfirm'
-          end
-        end
+        it_behaves_like 'the complete payment response'
       end
     end
 

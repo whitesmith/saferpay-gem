@@ -5,6 +5,9 @@ module Saferpay
       endpoint: 'https://www.saferpay.com/hosting',
       user_agent: 'Saferpay API Ruby Wrapper',
       account_id: '99867-94913159', # Saferpay test account
+      success_link: nil,
+      fail_link: nil,
+      back_link: nil,
     }.freeze
 
     VALID_CONFIG_KEYS = DEFAULTS.keys.freeze

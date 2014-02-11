@@ -1190,4 +1190,35 @@ http_interactions:
         ID=\"WxWrIlA48W06rAjKKOp5bzS80E5A\" MSGTYPE=\"PayConfirm\"/>\r\n"
     http_version: 
   recorded_at: Tue, 11 Feb 2014 11:50:33 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/VerifyPayConfirm.asp?ACCOUNTID=99867-94913159&DATA=%253CIDP%2520MSGTYPE=%2522PayConfirm%2522%2520TOKEN=%2522(unused)%2522%2520VTVERIFY=%2522(obsolete)%2522%2520KEYID=%25221-0%2522%2520ID=%2522A668MSAprOj4tAzv7G9lAQUfUr3A%2522%2520ACCOUNTID=%252299867-94913159%2522%2520PROVIDERID=%252290%2522%2520PROVIDERNAME=%2522Saferpay%2520Test%2520Card%2522%2520ORDERID=%2522123456789-001%2522%2520AMOUNT=%25221000%2522%2520CURRENCY=%2522EUR%2522%2520IP=%2522193.247.180.193%2522%2520IPCOUNTRY=%2522CH%2522%2520CCCOUNTRY=%2522XX%2522%2520MPI_LIABILITYSHIFT=%2522yes%2522%2520MPI_TX_CAVV=%2522AAABBIIFmAAAAAAAAAAAAAAAAAA=%2522%2520MPI_XID=%2522CxMTYwhoUXtCBAEndBULcRIQaAY=%2522%2520ECI=%25221%2522%2520CAVV=%2522AAABBIIFmAAAAAAAAAAAAAAAAAA=%2522%2520XID=%2522CxMTYwhoUXtCBAEndBULcRIQaAY=%2522%2520/%253E&SIGNATURE=7b2bb163f4ef86d969d992b4e2d61ad48d3b9022e0ec68177e35fe53184e6b3399730d1a3641d2a984ce38699daad72ab006d5d6a9565c5ae1cff8bdc8a1eb63&controller=test&id=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '49'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDCWQSDSSS=JFMENHOAOBFILEMKGENDOCNA; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Tue, 11 Feb 2014 15:11:49 GMT
+    body:
+      encoding: UTF-8
+      string: OK:ID=A668MSAprOj4tAzv7G9lAQUfUr3A&TOKEN=(unused)
+    http_version: 
+  recorded_at: Tue, 11 Feb 2014 15:11:50 GMT
 recorded_with: VCR 2.8.0
