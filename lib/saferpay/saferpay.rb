@@ -47,9 +47,9 @@ module Saferpay
 
     # Returns an hash with the payment url (:payment_url key)
     # Raises an error if missing parameters
-    def get_url(params = {})
-      params.merge!(get_url_default_params)
-      parse_get_url_response self.class.get('/CreatePayInit.asp', :query => params)
+    def get_payment_url(params = {})
+      params.merge!(get_payment_url_default_params)
+      parse_get_payment_url_response self.class.get('/CreatePayInit.asp', :query => params)
     end
 
     # Returns hash with parsed (and verified) response data
@@ -74,8 +74,8 @@ module Saferpay
 
     private
 
-    def parse_get_url_response(resp)
-      { :payment_url => resp.body }
+    def parse_get_payment_url_response(resp)
+      resp.body
     end
 
     def parse_verify_pay_confirm_response(resp)
@@ -102,7 +102,7 @@ module Saferpay
       }.reject{ |k, v| v.nil? }
     end
 
-    def get_url_default_params
+    def get_payment_url_default_params
       default_params.merge({
         'SUCCESSLINK' => @options[:success_link],
         'FAILLINK' => @options[:fail_link],

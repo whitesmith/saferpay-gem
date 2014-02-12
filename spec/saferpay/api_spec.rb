@@ -53,21 +53,21 @@ describe Saferpay::API do
     context 'when amount is missing' do
       let (:options) { {} }
       it 'raises Missing AMOUNT error' do
-        expect { subject.get_url(options) }.to raise_error(Saferpay::Error::BadRequest, 'Missing AMOUNT attribute')
+        expect { subject.get_payment_url(options) }.to raise_error(Saferpay::Error::BadRequest, 'Missing AMOUNT attribute')
       end
     end
 
     context 'when currency is missing' do
       let (:options) { {'AMOUNT' => 1000} }
       it 'raises Missing CURRENCY error' do
-        expect { subject.get_url(options) }.to raise_error(Saferpay::Error::BadRequest, 'Missing CURRENCY attribute')
+        expect { subject.get_payment_url(options) }.to raise_error(Saferpay::Error::BadRequest, 'Missing CURRENCY attribute')
       end
     end
 
     context 'when description is missing' do
       let (:options) { {'AMOUNT' => 1000, 'CURRENCY' => 'EUR'} }
       it 'raises Missing DESCRIPTION error' do
-        expect { subject.get_url(options) }.to raise_error(Saferpay::Error::BadRequest, 'Missing DESCRIPTION attribute')
+        expect { subject.get_payment_url(options) }.to raise_error(Saferpay::Error::BadRequest, 'Missing DESCRIPTION attribute')
       end
     end
 
@@ -75,7 +75,7 @@ describe Saferpay::API do
       let (:options) { {'AMOUNT' => 1000, 'CURRENCY' => 'EUR', 'DESCRIPTION' => 'Test description.'} }
 
       it 'does not raise an error' do
-        expect { subject.get_url(options) }.not_to raise_error
+        expect { subject.get_payment_url(options) }.not_to raise_error
       end
 
       it_behaves_like 'the get payment url response'

@@ -1,12 +1,12 @@
 shared_examples_for 'the get payment url response' do
-  let(:response) { subject.get_url(options) }
+  let(:response) { subject.get_payment_url(options) }
 
-  it 'is an hash' do
-    expect(response).to be_an Hash
+  it 'is a string' do
+    expect(response).to be_a String
   end
 
   it 'contains the payment url' do
-    expect(response[:payment_url]).to match /^https:\/\/www.saferpay.com\/.+/
+    expect(response).to match /^https:\/\/www.saferpay.com\/.+/
   end
 end
 
