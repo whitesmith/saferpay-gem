@@ -54,13 +54,16 @@ module Saferpay
 
     # Returns hash with parsed (and verified) response data
     # Raises an error if verification failed
-    def handle_pay_confirm(request_params = {})
+    def handle_pay_confirm(request_params = {}, original_options = nil)
 
       # Verify data validity
       verify_resp = parse_verify_pay_confirm_response self.class.get('/VerifyPayConfirm.asp', :query => request_params.merge(default_params))
 
       # Parse verified callback data
       callback_data = parse_callback_data(request_params)
+
+      # Check tampering
+      check_param_tampering(callback_data, original_options)
 
       verify_resp.merge(:callback_data => callback_data)
     end
@@ -94,6 +97,21 @@ module Saferpay
       data = normalize_params(HTTParty::Parser.call(data, :xml)['IDP'])
       data[:successful] = (data[:result] == '0')
       data
+    end
+
+    def check_param_tampering(callback, original)
+      check = original.nil? ? ['ACCOUNTID'] : ['AMOUNT', 'CURRENCY', 'ORDERID', 'ACCOUNTID']
+      original ||= {}
+      original.merge!(default_params)
+      diff = []
+
+      check.each do |param|
+        diff << param if original[param] != callback[:data][param.downcase.to_sym]
+      end
+
+      if diff.any?
+        raise Saferpay::Error::BadRequest, "Possible manipulation - #{diff.join(', ')} not matching"
+      end
     end
 
     def default_params

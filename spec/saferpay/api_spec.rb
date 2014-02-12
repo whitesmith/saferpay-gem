@@ -142,6 +142,55 @@ describe Saferpay::API do
         end
 
         it_behaves_like 'the verify pay confirm response'
+
+        describe 'the original options parameter' do
+          subject { Saferpay::API.new(:account_id => '99867-94913159') }
+
+          context 'when nothing matches' do
+            subject { Saferpay::API.new(:account_id => '123123') }
+            let (:original_options) { {} }
+            it 'raises Possible Manipulation error' do
+              expect { subject.handle_pay_confirm(options, original_options) }.to raise_error(Saferpay::Error::BadRequest, 'Possible manipulation - AMOUNT, CURRENCY, ORDERID, ACCOUNTID not matching')
+            end
+          end
+
+          context 'when amount doesn\'t match' do
+            let (:original_options) { { 'CURRENCY' => 'EUR', 'ORDERID' => '123456789-001' } }
+            it 'raises Possible Manipulation error' do
+              expect { subject.handle_pay_confirm(options, original_options) }.to raise_error(Saferpay::Error::BadRequest, 'Possible manipulation - AMOUNT not matching')
+            end
+          end
+
+          context 'when currency doesn\'t match' do
+            let (:original_options) { { 'AMOUNT' => '1000', 'ORDERID' => '123456789-001' } }
+            it 'raises Possible Manipulation error' do
+              expect { subject.handle_pay_confirm(options, original_options) }.to raise_error(Saferpay::Error::BadRequest, 'Possible manipulation - CURRENCY not matching')
+            end
+          end
+
+          context 'when orderid doesn\'t match' do
+            let (:original_options) { { 'AMOUNT' => '1000', 'CURRENCY' => 'EUR', 'ORDERID' => 'random' } }
+            it 'raises Possible Manipulation error' do
+              expect { subject.handle_pay_confirm(options, original_options) }.to raise_error(Saferpay::Error::BadRequest, 'Possible manipulation - ORDERID not matching')
+            end
+          end
+
+          context 'when account_id doesn\'t match' do
+            subject { Saferpay::API.new(:account_id => '123123') }
+            let (:original_options) { { 'AMOUNT' => '1000', 'CURRENCY' => 'EUR', 'ORDERID' => '123456789-001' } }
+            it 'raises Possible Manipulation error' do
+              expect { subject.handle_pay_confirm(options, original_options) }.to raise_error(Saferpay::Error::BadRequest, 'Possible manipulation - ACCOUNTID not matching')
+            end
+          end
+
+          context 'when everything matches' do
+            let (:original_options) { { 'AMOUNT' => '1000', 'CURRENCY' => 'EUR', 'ORDERID' => '123456789-001' } }
+            it 'does not raise an error' do
+              expect { subject.handle_pay_confirm(options, original_options) }.not_to raise_error
+            end
+          end
+
+        end
       end
 
       context 'when more than data and signature are defined' do
