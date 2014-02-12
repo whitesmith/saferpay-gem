@@ -17,6 +17,10 @@ shared_examples_for 'the verify pay confirm response' do
     expect(response).to be_an Hash
   end
 
+  it 'contains normalized keys' do
+    expect(response.keys).to include(:id, :callback_data, :token)
+  end
+
   it 'contains the id' do
     expect(response[:id]).to match /\w{28}/
   end
@@ -33,7 +37,7 @@ shared_examples_for 'the verify pay confirm response' do
     end
 
     it 'contains normalized keys' do
-      expect(callback_data.keys).to eq([:data, :signature])
+      expect(callback_data.keys).to include(:data, :signature)
     end
 
     it 'contains the XML data' do
@@ -59,6 +63,10 @@ shared_examples_for 'the complete payment response' do
 
   it 'is an hash' do
     expect(response).to be_an Hash
+  end
+
+  it 'contains normalized keys' do
+    expect(response.keys).to include(:id, :successful, :result, :msgtype)
   end
 
   it 'contains the id' do
