@@ -1,6 +1,17 @@
 require 'spec_helper'
 require 'saferpay'
 
+shared_examples_for 'default redefinition' do
+  context 'when account_id is redefined' do
+    let (:redefined_options) { options.merge( {'ACCOUNTID' => 'random-ID'} ) }
+    
+    it 'uses the new value instead of the default' do
+      expect(subject.class).to receive(:get).with anything, { :query => redefined_options }
+      subject.send(testing_method, redefined_options) rescue nil # don't care if it fails after
+    end
+  end
+end
+
 describe Saferpay::API do
   subject { Saferpay::API.new }
 
@@ -79,6 +90,10 @@ describe Saferpay::API do
       end
 
       it_behaves_like 'the get payment url response'
+
+      include_examples 'default redefinition' do
+        let (:testing_method) { :get_payment_url }
+      end
     end
 
   end
@@ -201,6 +216,10 @@ describe Saferpay::API do
         end
 
         it_behaves_like 'the verify pay confirm response'
+
+        include_examples 'default redefinition' do
+          let (:testing_method) { :handle_pay_confirm }
+        end
       end
     end
 
@@ -233,6 +252,10 @@ describe Saferpay::API do
         end
 
         it_behaves_like 'the complete payment response'
+
+        include_examples 'default redefinition' do
+          let (:testing_method) { :complete_payment }
+        end
       end
     end
 

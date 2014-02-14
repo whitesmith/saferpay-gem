@@ -49,7 +49,7 @@ module Saferpay
     # Returns an hash with the payment url (:payment_url key)
     # Raises an error if missing parameters
     def get_payment_url(params = {})
-      params.merge!(get_payment_url_default_params)
+      params = get_payment_url_default_params.merge(params)
       parse_get_payment_url_response self.class.get('/CreatePayInit.asp', :query => params)
     end
 
@@ -58,7 +58,7 @@ module Saferpay
     def handle_pay_confirm(request_params = {}, original_options = nil)
 
       # Verify data validity
-      verify_resp = parse_verify_pay_confirm_response self.class.get('/VerifyPayConfirm.asp', :query => request_params.merge(default_params))
+      verify_resp = parse_verify_pay_confirm_response self.class.get('/VerifyPayConfirm.asp', :query => default_params.merge(request_params))
 
       # Parse verified callback data
       callback_data = parse_callback_data(request_params)
@@ -72,7 +72,7 @@ module Saferpay
     # Returns an hash with ok
     # Raises an error if missing parameters
     def complete_payment(params = {})
-      params.merge!(default_params)
+      params = default_params.merge(params)
       parse_complete_payment_response self.class.get('/PayCompleteV2.asp', :query => params)
     end
 
@@ -102,8 +102,7 @@ module Saferpay
 
     def check_param_tampering(callback, original)
       check = original.nil? ? ['ACCOUNTID'] : ['AMOUNT', 'CURRENCY', 'ORDERID', 'ACCOUNTID']
-      original ||= {}
-      original.merge!(default_params)
+      original = default_params.merge(original || {})
       diff = []
 
       check.each do |param|
