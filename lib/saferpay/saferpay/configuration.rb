@@ -8,6 +8,7 @@ module Saferpay
       success_link: nil,
       fail_link: nil,
       back_link: nil,
+      notify_url: nil,
     }.freeze
 
     VALID_CONFIG_KEYS = DEFAULTS.keys.freeze

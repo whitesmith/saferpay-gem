@@ -9,6 +9,7 @@ module Saferpay
     include HTTParty
 
     base_uri Saferpay.options[:endpoint]
+    headers 'User-Agent' => Saferpay.options[:user_agent]
 
     class << self
 
@@ -125,6 +126,7 @@ module Saferpay
         'SUCCESSLINK' => @options[:success_link],
         'FAILLINK' => @options[:fail_link],
         'BACKLINK' => @options[:back_link],
+        'NOTIFYURL' => @options[:notify_url],
       }).reject{ |k, v| v.nil? }
     end
 
