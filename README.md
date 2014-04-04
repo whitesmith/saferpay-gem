@@ -1,5 +1,7 @@
 # Saferpay
 
+[![Gem Version](https://badge.fury.io/rb/saferpay.svg)](http://badge.fury.io/rb/saferpay)
+
 A Ruby Saferpay API wrapper.
 
 Interact with Saferpay's HTTPS Interface with an object-oriented API wrapper built with HTTParty.
@@ -20,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO.
+TODO. Meanwhile you can find some stuff in the specs.
 
 ## Contributing
 
