@@ -1,1 +1,1 @@
-require 'saferpay/saferpay'
+require 'saferpay/client'
