@@ -1,6 +1,11 @@
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'saferpay/version'
+
 Gem::Specification.new do |s|
   s.name        = 'saferpay'
-  s.version     = '0.0.0'
+  s.version     = Saferpay::VERSION
   s.authors     = ['Pedro Gaspar', 'Whitesmith']
   s.email       = ['me@pedrogaspar.com', 'info@whitesmith.co']
   s.licenses    = 'MIT'
