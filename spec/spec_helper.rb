@@ -1,4 +1,7 @@
-require 'rspec'
+require 'bundler/setup'
+Bundler.setup
+
+require 'saferpay'
 require 'vcr'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
