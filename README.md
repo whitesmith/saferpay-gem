@@ -1,6 +1,8 @@
 # Saferpay
 
-A Ruby Saferpay API wrapper. Interact with Saferpay's HTTPS Interface with an object-oriented API wrapper built with HTTParty.
+A Ruby Saferpay API wrapper.
+
+Interact with Saferpay's HTTPS Interface with an object-oriented API wrapper built with HTTParty.
 
 ## Installation
 
