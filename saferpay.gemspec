@@ -14,10 +14,11 @@ Gem::Specification.new do |s|
   s.description = 'Interact with Saferpay\'s HTTPS Interface with an object-oriented API wrapper built with HTTParty.'
   s.homepage    = 'http://github.com/whitesmith/saferpay-gem'
   
-  s.files       = Dir.glob("lib/**/*.rb")
+  s.files       = Dir.glob('lib/**/*.rb')
+  s.test_files  = Dir.glob('spec/**/*.rb')
 
   s.add_dependency 'httparty', '~> 0.12'
-  s.add_development_dependency 'rspec', '~> 2.14'
-  s.add_development_dependency 'webmock', '~> 1.15'
+  s.add_development_dependency 'rspec', '2.14.7'
+  s.add_development_dependency 'webmock', '1.15.2'
   s.add_development_dependency 'vcr', '~> 2.8'
 end
