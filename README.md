@@ -10,7 +10,9 @@ Interact with Saferpay's HTTPS Interface with an object-oriented API wrapper bui
 
 Add this line to your application's Gemfile:
 
-    gem 'saferpay'
+```ruby
+gem 'saferpay'
+```
 
 And then execute:
 
@@ -24,7 +26,7 @@ Or install it yourself as:
 
 ### Configuration
 
-You can change the global configuration using the method bellow. If you're on Rails you can place this code in an initializer like `config/initializers/saferpay.rb`.
+You can change the global configuration using the method below. If you're on Rails you can place this code in an initializer like `config/initializers/saferpay.rb`.
 
 ```ruby
 Saferpay.configure do |config|
@@ -40,12 +42,21 @@ As of now, the available global configurations are: `endpoint`, `user_agent`, `a
 You can also change configurations (except `endpoint`) on a per-client basis, on initialization:
 
 ```ruby
-client = Saferpay::API.new(:success_link => 'http://example.com')
+client = Saferpay::API.new(success_link: 'http://example.com')
 ```
 
 ### Generate Payment URL
 
-Work in progress.
+The `get_url` method queries Saferpay for the URL where the user may pay for whatever we're selling. This method has 4 required parameters: `ACCOUNT_ID`, `AMOUNT` (in cents), `CURRENCY` ([three-letter currency code](http://www.xe.com/iso4217.php)) and `DESCRIPTION`.
+
+The example below fetches a payment URL for a 10 Euro purchase.
+
+```ruby
+client = Saferpay::API.new
+url = client.get_url('AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are paying for the Foo Bar product.')
+```
+
+If you're working on a web app, you'll probably want to get the payment URL on your controller and place it as a *Procceed to Payment* link on your views.
 
 ### Check the Authorization Response
 
