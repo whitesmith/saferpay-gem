@@ -1,6 +1,6 @@
 # Saferpay
 
-[![Gem Version](https://badge.fury.io/rb/saferpay.svg)](http://badge.fury.io/rb/saferpay)
+[![Gem Version](https://badge.fury.io/rb/saferpay.svg)](http://badge.fury.io/rb/saferpay) [![Build Status](https://travis-ci.org/whitesmith/saferpay-gem.svg?branch=master)](https://travis-ci.org/whitesmith/saferpay-gem)
 
 A Ruby Saferpay API wrapper.
 
