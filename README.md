@@ -47,7 +47,9 @@ client = Saferpay::API.new(success_link: 'http://example.com')
 
 ### Generate Payment URL
 
-The `get_url` method queries Saferpay for the URL where the user may pay for whatever we're selling. This method has 4 required parameters: `ACCOUNT_ID`, `AMOUNT` (in cents), `CURRENCY` ([three-letter currency code](http://www.xe.com/iso4217.php)) and `DESCRIPTION`.
+The `get_url` method queries Saferpay for the URL where the user may pay for whatever we're selling. It returns a string.
+
+This method has 4 required parameters: `ACCOUNT_ID`, `AMOUNT` (in cents), `CURRENCY` ([three-letter currency code](http://www.xe.com/iso4217.php)) and `DESCRIPTION`. You may include any other parameters specified in the Saferpay documentation.
 
 The example below fetches a payment URL for a 10 Euro purchase.
 
