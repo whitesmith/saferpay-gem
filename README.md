@@ -22,7 +22,38 @@ Or install it yourself as:
 
 ## Usage
 
-TODO. Meanwhile you can find some stuff in the specs.
+### Configuration
+
+You can change the global configuration using the method bellow. If you're on Rails you can place this code in an initializer like `config/initializers/saferpay.rb`.
+
+```ruby
+Saferpay.configure do |config|
+    config.account_id   = 'YOUR_ACCOUNT_ID'
+    config.success_link = 'YOUR_SUCCESS_LINK'
+end
+```
+
+Changes to the global configuration are passed down to every Saferpay client.
+
+As of now, the available global configurations are: `endpoint`, `user_agent`, `account_id`, `success_link`, `fail_link`, `back_link` and `notify_url`. You can find the default values on [configuration.rb](lib/saferpay/configuration.rb).
+
+You can also change configurations (except `endpoint`) on a per-client basis, on initialization:
+
+```ruby
+client = Saferpay::API.new(:success_link => 'http://example.com')
+```
+
+### Generate Payment URL
+
+Work in progress.
+
+### Check the Authorization Response
+
+Work in progress.
+
+### Finalize the Payment
+
+Work in progress.
 
 ## Contributing
 
