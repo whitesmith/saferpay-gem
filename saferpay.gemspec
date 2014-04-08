@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.licenses    = 'MIT'
 
   s.summary     = 'A Ruby Saferpay API wrapper'
-  s.description = 'Interact with Saferpay\'s HTTPS Interface with an object-oriented API wrapper built with HTTParty.'
+  s.description = 'Interact with Saferpay\'s HTTPS Interface with a ruby API wrapper built with HTTParty.'
   s.homepage    = 'http://github.com/whitesmith/saferpay-gem'
   
   s.files         = `git ls-files`.split($/)

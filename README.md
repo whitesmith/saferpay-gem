@@ -2,9 +2,9 @@
 
 [![Gem Version](https://badge.fury.io/rb/saferpay.svg)](http://badge.fury.io/rb/saferpay) [![Build Status](https://travis-ci.org/whitesmith/saferpay-gem.svg?branch=master)](https://travis-ci.org/whitesmith/saferpay-gem)
 
-A Ruby Saferpay API wrapper.
+Interact with [Saferpay](http://saferpay.com)'s HTTPS Interface with a ruby API wrapper built with HTTParty.
 
-Interact with Saferpay's HTTPS Interface with an object-oriented API wrapper built with HTTParty.
+This gem is based on version 4.5 of Saferpay's Payment Page documentation. You can [contact Saferpay](http://saferpay.com/contact/) to get ahold of your documentation PDF (it doesn't appear to be on their website). Ask for the Payment Page integration documentation.
 
 ## Installation
 
