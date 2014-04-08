@@ -22,6 +22,26 @@ Or install it yourself as:
 
     $ gem install saferpay
 
+## Quick Start
+
+```ruby
+# Get the payment URL and make the user go there (display it as a link in the interface or something)
+    client = Saferpay::API.new
+    url = client.get_url('AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are paying for the Foo Bar product.')
+
+# Once the user finishes the payment process, Saferpay calls our callback URLs (defined by SUCCESSLINK and NOTIFYURL)
+
+# On the callback actions:
+    client = Saferpay::API.new
+    data = client.handle_pay_confirm(params) # this validates the query parameters in the callback data and parses them
+    # You could store some info into your DB here
+    
+    status = client.complete_payment('ID': data[:id]) # Settle Payment
+    if status[:successful]
+        # Ship the goods!
+    end
+```
+
 ## Usage
 
 ### Configuration
