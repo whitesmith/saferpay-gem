@@ -66,7 +66,7 @@ module Saferpay
       # Check tampering
       check_param_tampering(callback_data, original_options)
 
-      verify_resp.merge(:callback_data => callback_data)
+      callback_data[:data]
     end
 
     # Returns an hash with ok
