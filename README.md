@@ -100,7 +100,8 @@ resp = client.handle_pay_confirm(params, original_values)
             cavv:         'AAABBIIFmAAAAAAAAAAAAAAAAAA=',
             xid:          'CxMTYwhoUXtCBAEndBULcRIQaAY='
         },
-    }
+    },
+    signature: '7b2bb163f4ef86d969d992b4e2d61ad48d3b9022e0ec68177e35fe53184e6b3399730d1a3641d2a984ce38699daad72ab006d5d6a9565c5ae1cff8bdc8a1eb63',
 }
 ```
 
