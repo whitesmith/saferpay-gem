@@ -89,10 +89,10 @@ This method takes in the request parameters of `SUCCESSLINK` or `NOTIFYURL` and,
 ```ruby
 client = Saferpay::API.new
 original_values = {'AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are paying for the Foo Bar product.'}
-resp = client.handle_pay_confirm(params, original_values)
+data = client.handle_pay_confirm(params, original_values)
 ```
 
-`handle_pay_confirm` returns an Hash with the contents of `params` on the root level, and the parsed contents of the `DATA` XML in `resp[:callback_data][:data]`. If tampering is detected, an Exception will be raised identifying the problematic parameters. Below is a typical response:
+`handle_pay_confirm` returns an Hash with the contents of `params` on the root level, and the parsed contents of the `DATA` XML in `data[:callback_data][:data]`. If tampering is detected, an Exception will be raised identifying the problematic parameters. Below is a typical response:
 
 ```ruby
 {
@@ -127,14 +127,14 @@ resp = client.handle_pay_confirm(params, original_values)
 
 The response depends on the options you send to `get_url` and the payment method selected by the user, so check yours and use/save whatever info you think is relevant.
 
-### Complete Payment
+### Complete the Payment
 
 The final step in the payment process is to call the `complete_payment` method. This lets Saferpay know that everything is ok on our side and that we will "ship the goods".
 
 This method requires the purchase identifier you can find in the `:id` key from `handle_pay_confirm` response. In the example below, we'll be finalizing the purchase we verified in the [Check the Authorization Response](#check-the-authorization-response) section:
 
 ```ruby
-status = client.complete_payment('ID': resp[:id])
+status = client.complete_payment('ID': data[:id])
 
 if status[:successful]
     # Ship the goods!
