@@ -19,6 +19,8 @@ Gem::Specification.new do |s|
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ['lib']
 
+  s.required_ruby_version = '>= 1.9.3'  # Due to HTTParty
+
   s.add_dependency 'httparty', '~> 0.12'
 
   s.add_development_dependency 'bundler', '~> 1.5'
