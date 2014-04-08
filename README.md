@@ -107,9 +107,23 @@ resp = client.handle_pay_confirm(params, original_values)
 
 The response depends on the options you send to `get_url` and the payment method selected by the user, so check yours and use/save whatever info you think is relevant.
 
-### Finalize the Payment
+### Complete Payment
 
-Work in progress.
+The final step in the payment process is to call the `complete_payment` method. This lets Saferpay know that everything is ok on our side and that we will "ship the goods".
+
+This method requires the purchase identifier you can find in the `:id` key from `handle_pay_confirm` response. In the example below, we'll be finalizing the purchase we verified in the [Check the Authorization Response](#check-the-authorization-response) section:
+
+```ruby
+status = client.complete_payment('ID': resp[:id])
+
+if status[:successful]
+    # Ship the goods!
+end
+```
+
+You can also send other parameters, including `ACTION`, that allows you to perform other actions like cancelling the purchase. Check Saferpay's documentation for more info.
+
+`complete_payment` also returns an Hash with a boolean in the `:successful` key, a textual response to the settlement (for both successful and error states) in `:message` and other info described in Saferpay's documentation.
 
 ## Contributing
 
