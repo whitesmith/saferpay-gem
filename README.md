@@ -25,15 +25,18 @@ Or install it yourself as:
 ## Quick Start
 
 ```ruby
-# Get the payment URL and make the user go there (display it as a link in the interface or something)
-    client = Saferpay::API.new
-    url = client.get_url('AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are paying for the Foo Bar product.')
+PAYMENT_OPTS = {'AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are paying for XYZ.'}
 
-# Once the user finishes the payment process, Saferpay calls our callback URLs (defined by SUCCESSLINK and NOTIFYURL)
+# Get the payment URL and make the user go there (display as a link in the interface or something)
+    client = Saferpay::API.new
+    url = client.get_url(PAYMENT_OPTS)
+
+# Once the user finishes the payment process, Saferpay calls our callback URLs
+# (defined by SUCCESSLINK and NOTIFYURL)
 
 # On the callback actions:
     client = Saferpay::API.new
-    data = client.handle_pay_confirm(params) # this validates the query parameters in the callback data and parses them
+    data = client.handle_pay_confirm(params, PAYMENT_OPTS) # validate and parse the callback data
     # You could store some info into your DB here
     
     status = client.complete_payment('ID': data[:id]) # Settle Payment
@@ -75,7 +78,7 @@ The example below fetches a payment URL for a 10 Euro purchase.
 
 ```ruby
 client = Saferpay::API.new
-url = client.get_url('AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are paying for the Foo Bar product.')
+url = client.get_url('AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are paying for XYZ.')
 ```
 
 If you're working on a web app, you'll probably want to get the payment URL on your controller and place it as a *Procceed to Payment* link on your views.
@@ -88,7 +91,7 @@ This method takes in the request parameters of `SUCCESSLINK` or `NOTIFYURL` and,
 
 ```ruby
 client = Saferpay::API.new
-original_values = {'AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are paying for the Foo Bar product.'}
+original_values = {'AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are paying for XYZ.'}
 data = client.handle_pay_confirm(params, original_values)
 ```
 
