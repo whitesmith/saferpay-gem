@@ -92,36 +92,29 @@ original_values = {'AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are 
 data = client.handle_pay_confirm(params, original_values)
 ```
 
-`handle_pay_confirm` returns an Hash with the contents of `params` on the root level, and the parsed contents of the `DATA` XML in `data[:callback_data][:data]`. If tampering is detected, an Exception will be raised identifying the problematic parameters. Below is a typical response:
+`handle_pay_confirm` returns an Hash with the parsed contents of the `DATA` XML. If tampering is detected, an Exception will be raised identifying the problematic parameters. Below is a typical response:
 
 ```ruby
 {
-    id: 'A668MSAprOj4tAzv7G9lAQUfUr3A',
-    token: '(unused)',
-    callback_data: {
-        data: {
-            msgtype:      'PayConfirm',
-            token:        '(unused)',
-            vtverify:     '(obsolete)',
-            keyid:        '1-0',
-            id:           'A668MSAprOj4tAzv7G9lAQUfUr3A',
-            accountid:    '99867-94913159',
-            providerid:   '90',
-            providername: 'Saferpay Test Card',
-            amount:       '1000',
-            currency:     'EUR',
-            ip:           'X.X.X.X',
-            ipcountry:    'CH',
-            cccountry:    'XX',
-            mpi_liabilityshift: 'yes',
-            mpi_tx_cavv:  'AAABBIIFmAAAAAAAAAAAAAAAAAA=',
-            mpi_xid:      'CxMTYwhoUXtCBAEndBULcRIQaAY=',
-            eci:          '1',
-            cavv:         'AAABBIIFmAAAAAAAAAAAAAAAAAA=',
-            xid:          'CxMTYwhoUXtCBAEndBULcRIQaAY='
-        },
-        signature: '7b2bb163f4ef86d969d992b4e2d61ad48d3b9022e0ec68177e35fe53184e6b3399730d1a3641d2a984ce38699daad72ab006d5d6a9565c5ae1cff8bdc8a1eb63',
-    },
+    msgtype:      'PayConfirm',
+    token:        '(unused)',
+    vtverify:     '(obsolete)',
+    keyid:        '1-0',
+    id:           'A668MSAprOj4tAzv7G9lAQUfUr3A',
+    accountid:    '99867-94913159',
+    providerid:   '90',
+    providername: 'Saferpay Test Card',
+    amount:       '1000',
+    currency:     'EUR',
+    ip:           'X.X.X.X',
+    ipcountry:    'CH',
+    cccountry:    'XX',
+    mpi_liabilityshift: 'yes',
+    mpi_tx_cavv:  'AAABBIIFmAAAAAAAAAAAAAAAAAA=',
+    mpi_xid:      'CxMTYwhoUXtCBAEndBULcRIQaAY=',
+    eci:          '1',
+    cavv:         'AAABBIIFmAAAAAAAAAAAAAAAAAA=',
+    xid:          'CxMTYwhoUXtCBAEndBULcRIQaAY='
 }
 ```
 
