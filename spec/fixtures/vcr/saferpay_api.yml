@@ -1351,4 +1351,70 @@ http_interactions:
       string: 'ERROR: Missing or wrong ACCOUNTID attribute'
     http_version: 
   recorded_at: Fri, 14 Feb 2014 11:24:36 GMT
-recorded_with: VCR 2.8.0
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/CreatePayInit.asp?ACCOUNTID=99867-94913159&AMOUNT=1000&CURRENCY=EUR&DESCRIPTION=Test%20description.&NOTIFYURL=http://example.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Saferpay API Ruby Wrapper
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '713'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDSGCBQTTR=LKGBGAEDKNFMDGNBALMNMIMI; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 16 Apr 2014 17:52:04 GMT
+    body:
+      encoding: UTF-8
+      string: https://www.saferpay.com/vt2/Pay.aspx?DATA=%3cIDP+MSGTYPE%3d%22PayInit%22+MSG_GUID%3d%22113db3999a1d47d9ab36b1ea92ea7cf0%22+CLIENTVERSION%3d%222.2%22+KEYID%3d%220-99867-7d5a273c0f5043e28811e764d6433086%22+TOKEN%3d%222be25d30047a4b56a48eb9b34947951e%22+ALLOWCOLLECT%3d%22no%22+DELIVERY%3d%22no%22+EXPIRATION%3d%2220140417+19%3a52%3a04%22+ACCOUNTID%3d%2299867-94913159%22+AMOUNT%3d%221000%22+CURRENCY%3d%22EUR%22+DESCRIPTION%3d%22Test+description.%22+SUCCESSLINK%3d%22%22+BACKLINK%3d%22%22+FAILLINK%3d%22%22+CCNAME%3d%22yes%22+NOTIFYURL%3d%22http%3a%2f%2fexample.com%22+%2f%3e&SIGNATURE=8eb0f842f316c2635e819d919474ccb707acb98aa2cdff7c93b40490aa6c99e34269a8b2cc14b44a13b8325b3d3dc6aa77cef9ec38355e44ceaa8425565e0626
+    http_version: 
+  recorded_at: Wed, 16 Apr 2014 17:52:06 GMT
+- request:
+    method: get
+    uri: https://www.saferpay.com/hosting/CreatePayInit.asp?ACCOUNTID=99867-94913159&AMOUNT=1000&CURRENCY=EUR&DESCRIPTION=Test%20description.&XYZ=something
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Saferpay API Ruby Wrapper
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '670'
+      Content-Type:
+      - text/html
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDSGCBQTTR=GEJBGAEDDGDEKGKOJOFKEBCN; secure; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 16 Apr 2014 17:58:42 GMT
+    body:
+      encoding: UTF-8
+      string: https://www.saferpay.com/vt2/Pay.aspx?DATA=%3cIDP+MSGTYPE%3d%22PayInit%22+MSG_GUID%3d%22dabeeab031004a85a02a022b1cc28e92%22+CLIENTVERSION%3d%222.2%22+KEYID%3d%220-99867-7d5a273c0f5043e28811e764d6433086%22+TOKEN%3d%22ed0278e4fb3746ae94b97a4b0e3b436a%22+ALLOWCOLLECT%3d%22no%22+DELIVERY%3d%22no%22+EXPIRATION%3d%2220140417+19%3a58%3a43%22+ACCOUNTID%3d%2299867-94913159%22+AMOUNT%3d%221000%22+CURRENCY%3d%22EUR%22+DESCRIPTION%3d%22Test+description.%22+SUCCESSLINK%3d%22%22+BACKLINK%3d%22%22+FAILLINK%3d%22%22+CCNAME%3d%22yes%22+%2f%3e&SIGNATURE=9bb3e406bd40ca71b500b710171029c234996b6852a0971d000d6973a02b3f21c0a6941c256fcf377420c684fd2e8eaabe993083a6c4a403f525d62d7929669b
+    http_version: 
+  recorded_at: Wed, 16 Apr 2014 17:58:44 GMT
+recorded_with: VCR 2.9.0

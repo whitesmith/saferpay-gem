@@ -96,6 +96,46 @@ describe Saferpay::API do
       end
     end
 
+    context 'when a known parameter is also defined' do
+      let (:options) { {'AMOUNT' => 1000, 'CURRENCY' => 'EUR', 'DESCRIPTION' => 'Test description.', 'NOTIFYURL' => 'http://example.com'} }
+
+      it 'does not raise an error' do
+        expect { subject.get_payment_url(options) }.not_to raise_error
+      end
+
+      it_behaves_like 'the get payment url response'
+
+      let(:response) { subject.get_payment_url(options) }
+
+      it 'includes the extra parameter in the response' do
+        expect(response).to include 'NOTIFYURL'
+      end
+
+      include_examples 'default redefinition' do
+        let (:testing_method) { :get_payment_url }
+      end
+    end
+
+    context 'when an unknown parameter is defined' do
+      let (:options) { {'AMOUNT' => 1000, 'CURRENCY' => 'EUR', 'DESCRIPTION' => 'Test description.', 'XYZ' => 'something'} }
+
+      it 'does not raise an error' do
+        expect { subject.get_payment_url(options) }.not_to raise_error
+      end
+
+      it_behaves_like 'the get payment url response'
+
+      let(:response) { subject.get_payment_url(options) }
+
+      it 'does not include the extra parameter in the response' do
+        expect(response).not_to include 'XYZ'
+      end
+
+      include_examples 'default redefinition' do
+        let (:testing_method) { :get_payment_url }
+      end
+    end
+
   end
 
   context 'when directly accessing a non-existent URL' do
