@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = 'A Ruby Saferpay API wrapper'
   s.description = 'Interact with Saferpay\'s HTTPS Interface with a ruby API wrapper built with HTTParty.'
   s.homepage    = 'http://github.com/whitesmith/saferpay-gem'
-  
+
   s.files         = `git ls-files`.split($/)
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9.3'  # Due to HTTParty
 
-  s.add_dependency 'httparty', '~> 0.12'
+  s.add_dependency 'httparty', '~> 0.8.3'
 
   s.add_development_dependency 'bundler', '~> 1.5'
   s.add_development_dependency 'rake',    '~> 0'
