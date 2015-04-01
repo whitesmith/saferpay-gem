@@ -29,7 +29,7 @@ PAYMENT_OPTS = {'AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are pay
 
 # Get the payment URL and make the user go there (display as a link in the interface or something)
     client = Saferpay::API.new
-    url = client.get_url(PAYMENT_OPTS)
+    url = client.get_payment_url(PAYMENT_OPTS)
 
 # Once the user finishes the payment process, Saferpay calls our callback URLs
 # (defined by SUCCESSLINK and NOTIFYURL)
@@ -38,7 +38,7 @@ PAYMENT_OPTS = {'AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are pay
     client = Saferpay::API.new
     data = client.handle_pay_confirm(params, PAYMENT_OPTS) # validate and parse the callback data
     # You could store some info into your DB here
-    
+
     status = client.complete_payment('ID': data[:id]) # Settle Payment
     if status[:successful]
         # Ship the goods!
@@ -70,7 +70,7 @@ client = Saferpay::API.new(success_link: 'http://example.com')
 
 ### Generate Payment URL
 
-The `get_url` method queries Saferpay for the URL where the user may pay for whatever we're selling. It returns a String.
+The `get_payment_url` method queries Saferpay for the URL where the user may pay for whatever we're selling. It returns a String.
 
 This method has 4 required parameters: `ACCOUNT_ID`, `AMOUNT` (in cents), `CURRENCY` ([three-letter currency code](http://www.xe.com/iso4217.php)) and `DESCRIPTION`. You may include any other parameters specified in the Saferpay documentation.
 
@@ -78,16 +78,16 @@ The example below fetches a payment URL for a 10 Euro purchase.
 
 ```ruby
 client = Saferpay::API.new
-url = client.get_url('AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are paying for XYZ.')
+url = client.get_payment_url('AMOUNT': '1000', 'CURRENCY': 'EUR', 'DESCRIPTION': 'You are paying for XYZ.')
 ```
 
 If you're working on a web app, you'll probably want to get the payment URL on your controller and place it as a *Procceed to Payment* link on your views.
 
 ### Check the Authorization Response
 
-Once the user finishes the payment process on the payment URL we got via `get_url`, the merchant is notified by either the provided `SUCCESSLINK` or `NOTIFYURL`. These notifications contain a `DATA` parameter that is XML containing the authorization response. The next step in the payment process is to make sure this XML was not tempered with. We do this with the `handle_pay_confirm` method.
+Once the user finishes the payment process on the payment URL we got via `get_payment_url`, the merchant is notified by either the provided `SUCCESSLINK` or `NOTIFYURL`. These notifications contain a `DATA` parameter that is XML containing the authorization response. The next step in the payment process is to make sure this XML was not tempered with. We do this with the `handle_pay_confirm` method.
 
-This method takes in the request parameters of `SUCCESSLINK` or `NOTIFYURL` and, optionally, some of the original parameters you used in `get_url`. These original parameters are important because Saferpay strongly recommends that you check `ACCOUNTID`, `AMOUNT`, `CURRENCY` and `ORDERID` (if used) for changes. This gem always checks `ACCOUNTID` for you, but its up to you to provide the other values.
+This method takes in the request parameters of `SUCCESSLINK` or `NOTIFYURL` and, optionally, some of the original parameters you used in `get_payment_url`. These original parameters are important because Saferpay strongly recommends that you check `ACCOUNTID`, `AMOUNT`, `CURRENCY` and `ORDERID` (if used) for changes. This gem always checks `ACCOUNTID` for you, but its up to you to provide the other values.
 
 ```ruby
 client = Saferpay::API.new
@@ -121,7 +121,7 @@ data = client.handle_pay_confirm(params, original_values)
 }
 ```
 
-The response depends on the options you send to `get_url` and the payment method selected by the user, so check yours and use/save whatever info you think is relevant.
+The response depends on the options you send to `get_payment_url` and the payment method selected by the user, so check yours and use/save whatever info you think is relevant.
 
 ### Complete the Payment
 
