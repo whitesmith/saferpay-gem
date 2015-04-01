@@ -4,7 +4,7 @@ require 'saferpay'
 shared_examples_for 'default redefinition' do
   context 'when account_id is redefined' do
     let (:redefined_options) { options.merge( {'ACCOUNTID' => 'random-ID'} ) }
-    
+
     it 'uses the new value instead of the default' do
       expect(subject.class).to receive(:get).with anything, { :query => redefined_options }
       subject.send(testing_method, redefined_options) rescue nil # don't care if it fails after
@@ -18,11 +18,11 @@ describe Saferpay::API do
   before do
     VCR.insert_cassette 'saferpay_api', :record => :new_episodes
   end
- 
+
   after do
     VCR.eject_cassette
   end
-  
+
   describe 'configuration' do
     context 'by default' do
       Saferpay::Configuration::DEFAULTS.each do |key, val|
@@ -43,7 +43,7 @@ describe Saferpay::API do
 
   describe 'HTTParty configuration' do
     subject { Saferpay::API }
-    
+
     it 'includes HTTParty' do
       expect(subject).to include(HTTParty)
     end
@@ -148,7 +148,7 @@ describe Saferpay::API do
       end
     end
 
-    %w(PUT DELETE MOVE COPY).each do |method|
+    %w(PUT DELETE).each do |method|
       context "via #{method}" do
         it 'raises 405 MethodNotAllowed error' do
           expect { subject.class.send(method.downcase, '/foobar') }.to raise_error(Saferpay::Error, 'Method Not Allowed')
@@ -191,7 +191,7 @@ describe Saferpay::API do
 
       context 'when data and signature match' do
         let (:options) { {'DATA' => URI.encode('<IDP MSGTYPE="PayConfirm" TOKEN="(unused)" VTVERIFY="(obsolete)" KEYID="1-0" ID="A668MSAprOj4tAzv7G9lAQUfUr3A" ACCOUNTID="99867-94913159" PROVIDERID="90" PROVIDERNAME="Saferpay Test Card" ORDERID="123456789-001" AMOUNT="1000" CURRENCY="EUR" IP="193.247.180.193" IPCOUNTRY="CH" CCCOUNTRY="XX" MPI_LIABILITYSHIFT="yes" MPI_TX_CAVV="AAABBIIFmAAAAAAAAAAAAAAAAAA=" MPI_XID="CxMTYwhoUXtCBAEndBULcRIQaAY=" ECI="1" CAVV="AAABBIIFmAAAAAAAAAAAAAAAAAA=" XID="CxMTYwhoUXtCBAEndBULcRIQaAY=" />'), 'SIGNATURE' => '7b2bb163f4ef86d969d992b4e2d61ad48d3b9022e0ec68177e35fe53184e6b3399730d1a3641d2a984ce38699daad72ab006d5d6a9565c5ae1cff8bdc8a1eb63'} }
-        
+
         it 'does not raise an error' do
           expect { subject.handle_pay_confirm(options) }.not_to raise_error
         end
@@ -250,7 +250,7 @@ describe Saferpay::API do
 
       context 'when more than data and signature are defined' do
         let (:options) { {:id => 1, :controller => 'test', 'DATA' => URI.encode('<IDP MSGTYPE="PayConfirm" TOKEN="(unused)" VTVERIFY="(obsolete)" KEYID="1-0" ID="A668MSAprOj4tAzv7G9lAQUfUr3A" ACCOUNTID="99867-94913159" PROVIDERID="90" PROVIDERNAME="Saferpay Test Card" ORDERID="123456789-001" AMOUNT="1000" CURRENCY="EUR" IP="193.247.180.193" IPCOUNTRY="CH" CCCOUNTRY="XX" MPI_LIABILITYSHIFT="yes" MPI_TX_CAVV="AAABBIIFmAAAAAAAAAAAAAAAAAA=" MPI_XID="CxMTYwhoUXtCBAEndBULcRIQaAY=" ECI="1" CAVV="AAABBIIFmAAAAAAAAAAAAAAAAAA=" XID="CxMTYwhoUXtCBAEndBULcRIQaAY=" />'), 'SIGNATURE' => '7b2bb163f4ef86d969d992b4e2d61ad48d3b9022e0ec68177e35fe53184e6b3399730d1a3641d2a984ce38699daad72ab006d5d6a9565c5ae1cff8bdc8a1eb63'} }
-        
+
         it 'does not raise an error' do
           expect { subject.handle_pay_confirm(options) }.not_to raise_error
         end
@@ -286,7 +286,7 @@ describe Saferpay::API do
 
       context 'when id is valid' do
         let (:options) { default_options.merge({'ID' => 'WxWrIlA48W06rAjKKOp5bzS80E5A'}) }
-        
+
         it 'does not raise an error' do
           expect { subject.complete_payment(options) }.not_to raise_error
         end
